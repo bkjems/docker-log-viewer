@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Docker Log Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h1>Docker Containers</h1>
+        <button id="btn-refresh-list" title="Refresh container list">&#x21BB;</button>
+      </div>
+      <ul id="container-list"></ul>
+    </aside>
+
+    <main id="main">
+      <div id="placeholder">
+        <p>Select a container to view logs</p>
+      </div>
+
+      <div id="log-view" class="hidden">
+        <div class="log-header">
+          <div class="log-title">
+            <span id="log-status-dot" class="dot"></span>
+            <span id="log-container-name"></span>
+            <span id="log-container-image" class="image-label"></span>
+          </div>
+          <div class="log-actions">
+            <button id="btn-refresh-logs">Refresh Logs</button>
+            <button id="btn-analyze">Analyze with AI</button>
+          </div>
+        </div>
+
+        <pre id="log-output"></pre>
+
+        <div id="analysis-section" class="hidden">
+          <div class="analysis-header">AI Analysis</div>
+          <div id="analysis-output"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
